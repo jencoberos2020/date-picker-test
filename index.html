@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-gray-50 p-8">
+    <h2 class="font-semibold text-xl mb-4 required">Date and Time</h2>
+    <div class="text-lg publish-info"><input type="checkbox" class="publish-check" checked><label class="publish-label text-gray-500">Published ASAP</label></div>
+    <div class="datepicker-container">
+        <label for="publication-date" class="block text-gray-500 mb-2">Publication date:</label>
+        <div class="relative">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none publish-date-calendar"></div>
+            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white publication-date required" id="publication-date" placeholder="Select release date" onclick="toggleDatePicker(event)" readonly>
+            <div class="absolute right-0 top-0 mt-2 mr-2 publish-date-dropdown" onclick="toggleDatePicker(event)"></div>
+        </div>
+    </div>
+
+    <div class="datepicker-popup bg-white shadow-lg mt-2 p-4 rounded hidden" id="datepicker-popup">
+        <div id="custom-datepicker"></div>
+        <hr/>
+        <div class="publish-time-info md:flex md:justify-between md:mt-4">
+            <div class="md:w-1/2 md:pr-4">
+                <label for="publication-time" class="block mb-2">Publication Time</label>
+                <select id="publication-time" class="border rounded px-3 py-2 w-full text-gray-500 focus:outline-none focus:border-blue-500 publication-time"></select>
+            </div>
+            <div class="md:w-1/2 mt-4 md:mt-0">
+                <label for="publication-timezone" class="block mb-2">Publication Timezone</label>
+                <select id="publication-timezone" class="border rounded px-3 py-2 w-full text-gray-500 focus:outline-none focus:border-blue-500 publication-timezone">
+                    <option value="EST">EST</option>
+                    <option value="UTC">UTC</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
